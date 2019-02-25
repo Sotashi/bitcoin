@@ -1,7 +1,9 @@
 Bitcoin Core Sotashi Client
 =====================================
 This fork of Bitcoin keeps the initial reward of 50 BTC per block forever, correcting Satoshi's biggest mistake.
+
 You should be able to sync the blockchain up until block 210000. After that the Sotashi client will fork off. 
+
 WARNING: there is no replay protection.
 
 Bitcoin Core integration/staging tree
