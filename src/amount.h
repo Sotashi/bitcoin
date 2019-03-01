@@ -13,6 +13,10 @@ typedef int64_t CAmount;
 
 static const CAmount COIN = 100000000;
 
+static const CAmount MIN_BLOCK_REWARD = 50 * COIN;
+
+// variable used to validate coinbase transactions in tx_verify.cpp
+
 /** No amount larger than this (in satoshi) is valid.
  *
  * Note that this constant is *not* the total money supply, which in Bitcoin
