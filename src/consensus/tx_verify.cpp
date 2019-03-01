@@ -193,7 +193,7 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state, bool fChe
     if (tx.IsCoinBase())
     {
         
-        if (tx.vout.nValue < MIN_BLOCK_REWARD)
+        if (nValueOut < MIN_BLOCK_REWARD)
             return state.DoS(100, false, REJECT_INVALID, "block-reward-toolow");
 
         if (tx.vin[0].scriptSig.size() < 2 || tx.vin[0].scriptSig.size() > 100)
