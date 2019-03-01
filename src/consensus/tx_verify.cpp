@@ -192,6 +192,10 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state, bool fChe
 
     if (tx.IsCoinBase())
     {
+        // Check if block reward is at least 50 BTC
+        // It is allowed to burn the fees, but the new consensus rule introduced is a minimum block reward
+        // TODO: this consensus rule needs to become active from block 210000 onwards.
+        // Currently, the syncing stops at block 124724 because the coinbase transaction burned 1 sotashi.
         
         if (nValueOut < MIN_BLOCK_REWARD)
             return state.DoS(100, false, REJECT_INVALID, "block-reward-toolow");
